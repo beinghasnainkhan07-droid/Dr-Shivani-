@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tribute</title>
+
+<!-- Better Elegant Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#020617;
+--accent:#38bdf8;
+}
+
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:var(--bg);
+color:white;
+overflow-x:hidden;
+transition:.5s;
+}
+
+/* stars */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+background:black;
+}
+.star{
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+@keyframes twinkle{
+0%,100%{opacity:.2}
+50%{opacity:1}
+}
+
+/* themes */
+.dark{--bg:#020617; --accent:#38bdf8;}
+.pink{--bg:#2a0a1f; --accent:#ff6ec7;}
+
+/* HEADER TITLE (FIXED PERFECT SIZE + PREMIUM FONT) */
+.headerTitle{
+text-align:center;
+font-family:'Cormorant Garamond', serif;
+font-size:22px;
+letter-spacing:1.2px;
+margin-top:35px;
+margin-bottom:-10px;
+font-weight:600;
+color:var(--accent);
+opacity:.95;
+}
+
+/* progress bar */
+#bar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:var(--accent);
+z-index:999;
+}
+
+/* theme button */
+.themeBtn{
+position:fixed;
+top:15px;
+right:20px;
+background:var(--accent);
+color:black;
+padding:10px 18px;
+border-radius:40px;
+cursor:pointer;
+font-weight:500;
+z-index:999;
+}
+
+/* sections */
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px 30px;
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+}
+section.show{opacity:1; transform:translateY(0);}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+gap:50px;
+align-items:center;
+max-width:1100px;
+}
+
+.text{
+flex:1;
+font-size:22px;
+line-height:1.7;
+}
+
+/* photo frame locked */
+.frame{
+flex:1;
+display:flex;
+justify-content:center;
+}
+.frame img{
+width:85%;
+border-radius:12px;
+box-shadow:0 0 0 4px white,0 0 40px rgba(0,0,0,.6);
+transition:.5s;
+}
+.frame img:hover{transform:scale(1.05);}
+
+.reverse{flex-direction:row-reverse;}
+
+footer{
+text-align:center;
+padding:80px 20px;
+font-size:22px;
+font-family:'Cormorant Garamond', serif;
+}
+
+/* music */
+.music{
+position:fixed;
+bottom:25px;
+right:25px;
+background:var(--accent);
+color:black;
+padding:14px 20px;
+border-radius:50px;
+cursor:pointer;
+font-weight:500;
+}
+
+/* letter */
+.letter{
+max-width:800px;
+margin:auto;
+font-size:19px;
+line-height:1.9;
+text-align:center;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:20px;
+}
+
+.surpriseBtn{
+margin-top:30px;
+background:var(--accent);
+color:black;
+border:none;
+padding:14px 28px;
+font-size:15px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.note{
+display:none;
+margin-top:25px;
+font-size:19px;
+color:#ffd1ec;
+animation:fade 1s;
+}
+@keyframes fade{
+from{opacity:0; transform:translateY(20px)}
+to{opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+
+<body class="dark">
+
+<div class="stars" id="stars"></div>
+<div id="bar"></div>
+
+<div class="headerTitle">
+Celebrating the Presence of Dr. Shivani Chauhan
+</div>
+
+<div class="themeBtn" onclick="changeTheme()">Theme</div>
+
+<section>
+<div class="container">
+<div class="text">
+Where elegance meets serenity, there stands <b>Dr. Shivani Chauhan</b> — a presence as graceful as the horizon itself.
+</div>
+<div class="frame"><img src="photo1.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="container reverse">
+<div class="text">
+Not just admired, but remembered — because true grace is not shown, it is felt.
+</div>
+<div class="frame"><img src="photo2.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="text">
+Even in silence, your aura speaks volumes that words could never capture.
+</div>
+<div class="frame"><img src="photo3.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="container reverse">
+<div class="text">
+Some moments become beautiful simply because <b>Dr. Shivani Chauhan</b> is part of them.
+</div>
+<div class="frame"><img src="photo4.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="text">
+Elegance may fade from places, but the impression you leave never does.
+</div>
+<div class="frame"><img src="photo5.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="container reverse">
+<div class="text">
+A name that carries warmth, respect, and admiration — <b>Dr. Shivani Chauhan</b>.
+</div>
+<div class="frame"><img src="photo6.jpg"></div>
+</div>
+</section>
+
+<section>
+<div class="letter">
+<b>Dear Dr. Shivani Chauhan,</b><br><br>
+
+Thank you for being more than just our Orthopaedics teacher — you have been a mentor, a guide, and a personality we truly admire.  
+Your teaching leaves an impression that stays far beyond the classroom.  
+
+I sincerely feel grateful for every lesson and every moment of knowledge you shared.  
+Your dedication and grace make learning memorable.  
+
+No matter where life takes you, the respect you leave behind will always remain.  
+
+<br><br>
+<b>With heartfelt thanks,<br>
+Being Hasnain Khan</b>
+
+<br><br>
+
+<button class="surpriseBtn" onclick="showNote()">Open Surprise Note</button>
+
+<div class="note" id="note">
+Mam… ek baat to pakki hai — aap royi to thi ❤️
+</div>
+</div>
+</section>
+
+<footer>Forever graceful, forever inspiring ✨</footer>
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
+<div class="music" onclick="toggleMusic()">♪</div>
+
+<script>
+for(let i=0;i<120;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+s.style.animationDuration=(2+Math.random()*3)+"s";
+stars.appendChild(s);
+}
+
+const sec=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+let y=scrollY;
+sec.forEach(s=>{ if(y>s.offsetTop-400)s.classList.add("show"); });
+let h=document.documentElement.scrollHeight-innerHeight;
+bar.style.width=(y/h)*100+"%";
+});
+
+function changeTheme(){
+document.body.classList.remove("dark");
+document.body.classList.add("pink");
+}
+
+let m=document.getElementById("music");
+function toggleMusic(){ m.paused?m.play():m.pause(); }
+
+function showNote(){
+document.getElementById("note").style.display="block";
+}
+</script>
+
+</body>
+</html>
